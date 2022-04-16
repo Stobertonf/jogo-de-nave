@@ -185,6 +185,27 @@ function start() {
 
         }
 
+        // Disparo com o inimigo2
+
+        if (colisao4.length > 0) {
+
+            //Pega as posições do inimigo 2 
+            inimigo2X = parseInt($("#inimigo2").css("left"));
+            inimigo2Y = parseInt($("#inimigo2").css("top"));
+            //Remove da tela
+            $("#inimigo2").remove();
+
+            //Chama a explosão 2 com as posições do inimigo2
+            explosao2(inimigo2X, inimigo2Y);
+
+            //Reposiciona o disparo fora da tela para exlcluir
+            $("#disparo").css("left", 950);
+
+            //Chama a função de reposicionar o inimigo2
+            reposicionaInimigo2();
+
+        }
+
     } //Fim da função colisao()
 
     //Explosão 1
