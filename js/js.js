@@ -166,6 +166,25 @@ function start() {
 
         }
 
+        // Disparo com o inimigo1
+
+        if (colisao3.length > 0) {
+
+            //Pega as posições do inimigo 1 
+            inimigo1X = parseInt($("#inimigo1").css("left"));
+            inimigo1Y = parseInt($("#inimigo1").css("top"));
+
+            //Chama a explosão 1 com essas posições
+            explosao1(inimigo1X, inimigo1Y);
+            //reposiciona o disparo
+            $("#disparo").css("left", 950);
+
+            posicaoY = parseInt(Math.random() * 334);
+            $("#inimigo1").css("left", 694);
+            $("#inimigo1").css("top", posicaoY);
+
+        }
+
     } //Fim da função colisao()
 
     //Explosão 1
