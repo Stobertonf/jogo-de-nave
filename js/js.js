@@ -9,7 +9,13 @@ function start() {
 
     //Principais variáveis do jogo
 	
-	var jogo = {}
+	var jogo = {};
+    //Aqui estou configurando o que cada tecla irá fazer
+    var TECLA = {
+        W: 87,
+        S: 83,
+        D: 68
+        }
 	
 	//Game Loop
 
