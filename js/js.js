@@ -283,6 +283,27 @@ function start() {
 
     } // Fim da função explosao2()
 
+    //Reposiciona Amigo
+    //Reposiciona o amigo somente se o jogo não acabar!
+    function reposicionaAmigo() {
+
+        var tempoAmigo = window.setInterval(reposiciona6, 6000);
+
+        function reposiciona6() {
+            window.clearInterval(tempoAmigo);
+            tempoAmigo = null;
+
+            if (fimdejogo == false) {
+
+                $("#fundoGame").append("<div id='amigo' class='anima3'></div>");
+
+            }
+
+        }
+
+    } // Fim da função reposicionaAmigo()
+
+
     function moveinimigo1() {
 
         //Pega a posição da div inimiga1
