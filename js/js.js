@@ -11,6 +11,7 @@ function start() {
 
     var jogo = {};
     var velocidade = 5;
+    var fimdejogo = false;
     var podeAtirar = true; //Var Para atirar em todo mundo!!!
     var posicaoY = parseInt(Math.random() * 334);
     //Cria um valor randomico (entre 0 334) para posicionar o helicóptero
@@ -49,6 +50,7 @@ function start() {
         movejogador();
         moveinimigo1();
         moveinimigo2();
+
 
 
     } // Fim da função loop()
