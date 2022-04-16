@@ -45,6 +45,7 @@ function start() {
 	movefundo();
     movejogador();
     moveinimigo1();
+    moveinimigo2();
 	
 	} // Fim da função loop()
 
@@ -107,5 +108,18 @@ function start() {
                     
                 }
         } //Fim da função moveinimigo1()
+
+
+        function moveinimigo2() {
+            posicaoX = parseInt($("#inimigo2").css("left"));
+            //cria a variável com posição x para pegar left do inimigo2
+        $("#inimigo2").css("left",posicaoX-3);
+            //faz o inimigo2 caminhar 3 unidades para a esquerda        
+            if (posicaoX<=0) {
+                
+            $("#inimigo2").css("left",775);
+                        
+            }
+        } // Fim da função moveinimigo2()
 
 }
