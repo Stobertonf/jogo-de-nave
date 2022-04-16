@@ -10,6 +10,10 @@ function start() {
     //Principais variáveis do jogo
 	
 	var jogo = {};
+    var velocidade=5;
+    var posicaoY = parseInt(Math.random() * 334); 
+    //Cria um valor randomico (entre 0 334) para posicionar o helicóptero
+    
     //Aqui estou configurando o que cada tecla irá fazer
     var TECLA = {
         W: 87,
@@ -40,6 +44,7 @@ function start() {
 	
 	movefundo();
     movejogador();
+    moveinimigo1();
 	
 	} // Fim da função loop()
 
@@ -83,5 +88,24 @@ function start() {
         }
     
         } // fim da função movejogador()
+        
+
+        //
+        function moveinimigo1() {
+
+            //Pega a posição da div inimiga1
+            posicaoX = parseInt($("#inimigo1").css("left"));
+            //Depois subtrai da velocidade, fazendo o inimigo caminhar sempre para a esquerda 
+            $("#inimigo1").css("left",posicaoX-velocidade);
+            $("#inimigo1").css("top",posicaoY);
+                
+            //se a posição x for <=0 reposiciona o inimigo1 no lado direito.
+                if (posicaoX<=0) {
+                posicaoY = parseInt(Math.random() * 334);
+                $("#inimigo1").css("left",694);
+                $("#inimigo1").css("top",posicaoY);
+                    
+                }
+        } //Fim da função moveinimigo1()
 
 }
