@@ -96,3 +96,12 @@ body {
     background-position: -512px;
   }
 }
+
+.anima2 {
+  background-image: url(../imgs/inimigo1.png);
+  animation: play 0.5s steps(2) infinite;
+  -webkit-animation: play 0.5s steps(2) infinite;
+  -moz-animation: play 0.5s steps(2) infinite;
+  -ms-animation: play 0.5s steps(2) infinite;
+  -o-animation: play 0.5s steps(2) infinite;
+}
