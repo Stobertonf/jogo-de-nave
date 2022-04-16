@@ -11,6 +11,7 @@ function start() {
 	
 	var jogo = {};
     var velocidade=5;
+    var podeAtirar=true; //Var Para atirar em todo mundo!!!
     var posicaoY = parseInt(Math.random() * 334); 
     //Cria um valor randomico (entre 0 334) para posicionar o helicóptero
     
@@ -86,12 +87,46 @@ function start() {
         }
         
         if (jogo.pressionou[TECLA.D]) {
-            
-            //Chama função Disparo	
+            //Chama função Disparo para atirar em todo mundo!!!
+            disparo();
         }
     
         } // fim da função movejogador()
         
+        //Função para atirar em todo mundo!!!
+        function disparo() {
+	
+            if (podeAtirar==true) {
+                
+            podeAtirar=false;
+            
+            topo = parseInt($("#jogador").css("top"))
+            posicaoX= parseInt($("#jogador").css("left"))
+            tiroX = posicaoX + 190;
+            topoTiro=topo+37; // Posição do tiro
+            $("#fundoGame").append("<div id='disparo'></div");
+            $("#disparo").css("top",topoTiro);
+            $("#disparo").css("left",tiroX);
+            
+            //Faz o movimento a cada 30mile segundos
+            var tempoDisparo=window.setInterval(executaDisparo, 30);
+            
+            } //Fecha podeAtirar
+         
+                   function executaDisparo() {
+                posicaoX = parseInt($("#disparo").css("left"));
+                $("#disparo").css("left",posicaoX+15); //Velocidade do tiro
+        
+                        if (posicaoX>900) {
+                                
+                    window.clearInterval(tempoDisparo);
+                    tempoDisparo=null; //zera o tempoDisparo
+                    $("#disparo").remove(); //Remove o disparo da tela
+                    podeAtirar=true; //Permite o usuário atirar novamente
+                            
+                           }
+            } // Fecha executaDisparo()
+        } // Fecha disparo()
 
         //
         function moveinimigo1() {
