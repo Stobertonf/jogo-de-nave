@@ -17,6 +17,8 @@ function start() {
         D: 68
         }
 
+        jogo.pressionou = [];
+
         //Verifica se o usuário pressionou alguma tecla	
 	
 	$(document).keydown(function(e){
