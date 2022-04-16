@@ -132,6 +132,7 @@ function start() {
     } // Fecha disparo()
 
     //Framework Jquery Collision
+    //Lista das colisões
     function colisao() {
         var colisao1 = ($("#jogador").collision($("#inimigo1")));
         var colisao2 = ($("#jogador").collision($("#inimigo2")));
@@ -204,6 +205,14 @@ function start() {
             //Chama a função de reposicionar o inimigo2
             reposicionaInimigo2();
 
+        }
+
+        // colisão do jogador com o amigo
+
+        if (colisao5.length > 0) {
+
+            reposicionaAmigo();
+            $("#amigo").remove();
         }
 
     } //Fim da função colisao()
