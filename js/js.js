@@ -42,7 +42,8 @@ function start() {
 	jogo.timer = setInterval(loop,30);
 	
 	function loop() {
-	
+    
+    colisao();
     moveamigo();
 	movefundo();
     movejogador();
@@ -128,7 +129,47 @@ function start() {
             } // Fecha executaDisparo()
         } // Fecha disparo()
 
-        //
+        //Framework Jquery Collision
+        function colisao() {
+            var colisao1 = ($("#jogador").collision($("#inimigo1")));
+            // jogador com o inimigo1
+                
+            //Identifica se a variável está preenchida ou não
+                if (colisao1.length>0) {
+            //se for >0 tem colissão
+                inimigo1X = parseInt($("#inimigo1").css("left")); //Pega a posição atual do inimigo
+                inimigo1Y = parseInt($("#inimigo1").css("top")); //Pega a posição atual do inimigo
+                explosao1(inimigo1X,inimigo1Y); //Valores das posições
+            
+                posicaoY = parseInt(Math.random() * 334);
+                $("#inimigo1").css("left",694); //reposiciona o inimigo 1 se houver colissão
+                $("#inimigo1").css("top",posicaoY);
+                }
+            
+            } //Fim da função colisao()
+
+            //Explosão 1
+            //Se fizer no css não funciona em todos os navegadores
+            function explosao1(inimigo1X,inimigo1Y) {
+                $("#fundoGame").append("<div id='explosao1'></div"); //cria uma div com nome explosão1
+                $("#explosao1").css("background-image", "url(imgs/explosao.png)"); //indica a imagem da explosão
+                var div=$("#explosao1");
+                div.css("top", inimigo1Y); //indica a posição da explosão(local que o inimigo estava)
+                div.css("left", inimigo1X);
+                div.animate({width:200, opacity:0}, "slow"); //função do Jquery para indicar o tamanho da div.
+                
+                var tempoExplosao=window.setInterval(removeExplosao, 1000); //executa após 1 segundo para remover a explosão 1
+                
+                    function removeExplosao() {
+                        
+                        div.remove();
+                        window.clearInterval(tempoExplosao);
+                        tempoExplosao=null;
+                        
+                    }
+                    
+                } // Fim da função explosao1()
+
         function moveinimigo1() {
 
             //Pega a posição da div inimiga1
