@@ -11,6 +11,9 @@ function start() {
     //Principais variáveis do jogo
 
     var jogo = {};
+    var pontos = 0;
+    var salvos = 0;
+    var perdidos = 0;
     var velocidade = 5;
     var fimdejogo = false;
     var podeAtirar = true; //Var Para atirar em todo mundo!!!
@@ -45,6 +48,7 @@ function start() {
 
     function loop() {
 
+        placar();
         colisao();
         moveamigo();
         movefundo();
@@ -171,7 +175,8 @@ function start() {
         // Disparo com o inimigo1
 
         if (colisao3.length > 0) {
-
+            //pontuação com o inimigo1
+            pontos = pontos + 100;
             //Pega as posições do inimigo 1 
             inimigo1X = parseInt($("#inimigo1").css("left"));
             inimigo1Y = parseInt($("#inimigo1").css("top"));
@@ -190,6 +195,8 @@ function start() {
         // Disparo com o inimigo2
 
         if (colisao4.length > 0) {
+            //pontuação com o inimigo2
+            pontos = pontos + 50;
 
             //Pega as posições do inimigo 2 
             inimigo2X = parseInt($("#inimigo2").css("left"));
@@ -211,7 +218,8 @@ function start() {
         // colisão do jogador com o amigo
 
         if (colisao5.length > 0) {
-
+            //Se o jogadr salvar o amigo ganhe pontos
+            salvos++;
             reposicionaAmigo();
             $("#amigo").remove();
         }
@@ -219,7 +227,8 @@ function start() {
         //Inimigo2 com o amigo
 
         if (colisao6.length > 0) {
-
+            //pontuação se o inimigo2 se encontrar com o amigo
+            perdidos++;
             amigoX = parseInt($("#amigo").css("left"));
             amigoY = parseInt($("#amigo").css("top"));
             explosao3(amigoX, amigoY);
