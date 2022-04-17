@@ -448,9 +448,33 @@ function start() {
             $("#energia").css("background-image", "url(imgs/energia0.png)");
 
             //Game Over
+            gameOver();
         }
 
     } // Fim da função energia()
+
+    //Função GAME OVER
+    function gameOver() {
+        fimdejogo = true; //Altera o valor da variável fimdejogo para true
+        musica.pause(); //Pausa a música de fundo
+        somGameover.play(); //Inicia a música de game over
+
+        window.clearInterval(jogo.timer);
+        jogo.timer = null; //Principal função, que para o game.
+
+        //Remove os personagens
+        $("#jogador").remove();
+        $("#inimigo1").remove();
+        $("#inimigo2").remove();
+        $("#amigo").remove();
+
+        //Cria a div fim de Jogo
+        $("#fundoGame").append("<div id='fim'></div>");
+
+        //Insere o texto gameOver, pontuação e apresenta a opção para reiniciar o jogo
+        $("#fim").html("<h1> Game Over </h1><p>Sua pontuação foi: " + pontos + "</p>" + "<div id='reinicia' onClick=reiniciaJogo()><h3>Jogar Novamente</h3></div>");
+    } // Fim da função gameOver();
+
 
 
 }// Fim da função Start
