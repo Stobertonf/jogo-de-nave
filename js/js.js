@@ -185,6 +185,8 @@ function start() {
         if (colisao3.length > 0) {
             //pontuação com o inimigo1
             pontos = pontos + 100;
+            //Aumentando a velocidade do jogo
+            velocidade = velocidade + 0.3;
             //Pega as posições do inimigo 1 
             inimigo1X = parseInt($("#inimigo1").css("left"));
             inimigo1Y = parseInt($("#inimigo1").css("top"));
