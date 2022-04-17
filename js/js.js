@@ -475,6 +475,15 @@ function start() {
         $("#fim").html("<h1> Game Over </h1><p>Sua pontuação foi: " + pontos + "</p>" + "<div id='reinicia' onClick=reiniciaJogo()><h3>Jogar Novamente</h3></div>");
     } // Fim da função gameOver();
 
-
-
 }// Fim da função Start
+
+//Reinicia o Jogo
+
+
+
+function reiniciaJogo() {
+    somGameover.pause(); //Pausa a música de game Over
+    $("#fim").remove(); //Remove a mensagem de game Over
+    start(); //Chama a função start
+
+} //Fim da função reiniciaJogo
