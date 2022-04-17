@@ -31,6 +31,14 @@ function start() {
 
     jogo.pressionou = [];
 
+    //Variáveis de som
+    var somDisparo = document.getElementById("somDisparo");
+    var somExplosao = document.getElementById("somExplosao");
+    var musica = document.getElementById("musica");
+    var somGameover = document.getElementById("somGameover");
+    var somPerdido = document.getElementById("somPerdido");
+    var somResgate = document.getElementById("somResgate");
+
     //Verifica se o usuário pressionou alguma tecla	
 
     $(document).keydown(function (e) {
