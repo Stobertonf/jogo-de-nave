@@ -122,6 +122,7 @@ function start() {
 
         if (podeAtirar == true) {
 
+            somDisparo.play();
             podeAtirar = false;
 
             topo = parseInt($("#jogador").css("top"))
@@ -243,6 +244,7 @@ function start() {
         if (colisao5.length > 0) {
             //Se o jogadr salvar o amigo ganhe pontos
             salvos++;
+            somResgate.play();
             reposicionaAmigo();
             $("#amigo").remove();
         }
@@ -266,6 +268,7 @@ function start() {
     //Explosão 1
     //Se fizer no css não funciona em todos os navegadores
     function explosao1(inimigo1X, inimigo1Y) {
+        somExplosao.play();
         $("#fundoGame").append("<div id='explosao1'></div"); //cria uma div com nome explosão1
         $("#explosao1").css("background-image", "url(imgs/explosao.png)"); //indica a imagem da explosão
         var div = $("#explosao1");
@@ -309,6 +312,7 @@ function start() {
 
     function explosao2(inimigo2X, inimigo2Y) {
 
+        somExplosao.play();
         $("#fundoGame").append("<div id='explosao2'></div");
         $("#explosao2").css("background-image", "url(imgs/explosao.png)");
         var div2 = $("#explosao2");
@@ -397,6 +401,8 @@ function start() {
     //Explosão3
 
     function explosao3(amigoX, amigoY) {
+
+        somPerdido.play();
         $("#fundoGame").append("<div id='explosao3' class='anima4'></div");
         $("#explosao3").css("top", amigoY);
         $("#explosao3").css("left", amigoX);
