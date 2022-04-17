@@ -388,4 +388,12 @@ function start() {
     } // Fim da função explosao3
 
 
+    //Pontuação do Jogo
+    function placar() {
+
+        $("#placar").html("<h2> Pontos: " + pontos + " Salvos: " + salvos + " Perdidos: " + perdidos + "</h2>");
+
+    } //fim da função placar()
+
+
 }// Fim da função Start
