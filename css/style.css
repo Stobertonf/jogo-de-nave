@@ -255,3 +255,11 @@ h2 {
   font-size: 20px;
   color: #fff;
 }
+
+#energia {
+  width: 140px;
+  height: 38px;
+  position: absolute;
+  left: 750px;
+  top: 7px;
+}
