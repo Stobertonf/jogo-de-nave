@@ -39,6 +39,11 @@ function start() {
     var somPerdido = document.getElementById("somPerdido");
     var somResgate = document.getElementById("somResgate");
 
+    //Música em loop
+    //Adicionando um evento na variável música, ao chegar no fim, toca novamente.
+    musica.addEventListener("ended", function () { musica.currentTime = 0; musica.play(); }, false);
+    musica.play();
+
     //Verifica se o usuário pressionou alguma tecla	
 
     $(document).keydown(function (e) {
