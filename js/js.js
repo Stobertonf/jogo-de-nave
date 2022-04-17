@@ -16,6 +16,7 @@ function start() {
     var salvos = 0;
     var perdidos = 0;
     var velocidade = 5;
+    var energiaAtual = 3;
     var fimdejogo = false;
     var podeAtirar = true; //Var Para atirar em todo mundo!!!
     var posicaoY = parseInt(Math.random() * 334);
@@ -50,6 +51,7 @@ function start() {
     function loop() {
 
         placar();
+        energia();
         colisao();
         moveamigo();
         movefundo();
@@ -150,6 +152,9 @@ function start() {
 
         //Identifica se a variável está preenchida ou não
         if (colisao1.length > 0) {
+
+            //Subtrai a energia se coledir
+            energiaAtual--;
             //se for >0 tem colissão
             inimigo1X = parseInt($("#inimigo1").css("left")); //Pega a posição atual do inimigo
             inimigo1Y = parseInt($("#inimigo1").css("top")); //Pega a posição atual do inimigo
@@ -163,6 +168,8 @@ function start() {
         // jogador com o inimigo2 
         if (colisao2.length > 0) {
 
+            //Subtrai a energia se coledir
+            energiaAtual--;
             inimigo2X = parseInt($("#inimigo2").css("left"));
             inimigo2Y = parseInt($("#inimigo2").css("top"));
             explosao2(inimigo2X, inimigo2Y);//chamando a explosao2
@@ -395,6 +402,34 @@ function start() {
         $("#placar").html("<h2> Pontos: " + pontos + " Salvos: " + salvos + " Perdidos: " + perdidos + "</h2>");
 
     } //fim da função placar()
+
+    //Barra de energia
+
+    function energia() {
+        //Analisa a variável energia e exibe a img conforme o seu valor
+        if (energiaAtual == 3) {
+
+            $("#energia").css("background-image", "url(imgs/energia3.png)");
+        }
+
+        if (energiaAtual == 2) {
+
+            $("#energia").css("background-image", "url(imgs/energia2.png)");
+        }
+
+        if (energiaAtual == 1) {
+
+            $("#energia").css("background-image", "url(imgs/energia1.png)");
+        }
+
+        if (energiaAtual == 0) {
+
+            $("#energia").css("background-image", "url(imgs/energia0.png)");
+
+            //Game Over
+        }
+
+    } // Fim da função energia()
 
 
 }// Fim da função Start
