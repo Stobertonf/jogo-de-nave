@@ -189,7 +189,7 @@ body {
 .anima4 {
   width: 44px;
   height: 51px;
-  background-image: url(../imgs/amigo_explosao.png);
+  background-image: url(../imgs/amigo_morte.png);
   animation: play3 0.5s steps(7) infinite;
   -webkit-animation: play3 0.5s steps(7) infinite;
   -moz-animation: play3 0.5s steps(7) infinite;
