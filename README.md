@@ -10,16 +10,15 @@
 
 ## Escopo
 
-📚 Neste curso, eu tive a oportunidade de aprender a desenvolver o famoso jogo de nave, com o instrutor Denilson Bonatti.
+📚 Neste curso, eu tive a oportunidade de aprender a desenvolver o famoso jogo de nave, com o instrutor Denilson Bonatti. Além disso, eu tive a oportunidade de aprender / revisar alguns conceitos do JS, para criar funções de movimentar elementos, placar, inserir músicas de fundo, criar eventos de colisões e principalmente ( a mais legal ) de matar os inimigos. 😆😂😆😂
 
 ## Foco
 
 😊 O curso é focado em desenvolvimento Web, utilizando as tecnologias HTML5, CSS3 e JavaScript. Além disso, utilizei o framework Jquery, para facilitar a sintaxe do JavaScript e Jquery Colission, que é utilizado para identificar colisões entre as divs, o mesmo é extremamente útil para desenvolver Jogos em 2 dimensões.
 
-## Projeto
+## Objetivo
 
-🛠 Neste projeto, eu tive a oportunidade de aprender / revisar alguns conceitos do JS, para criar funções de movimentar elementos, placar, inserir músicas de fundo, 
-criar eventos de colisões e principalmente ( a mais legal ) de matar os inimigos. 😆😂😆😂
+🛠 O meu principal objetivo ao fazer esse curso foi aprender a desenvolver jogos utilizando as tecnologias mencionadas anteriormente.
 
 ## Prazo
 
